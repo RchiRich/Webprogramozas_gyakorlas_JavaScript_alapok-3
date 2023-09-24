@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feladat 3</title>
+</head>
+<body>
+    
+    <button id="koszontesGomb"><h1>Köszöntés</h1></button>
+
+    <script>
+        const koszontesGomb = document.getElementById("koszontesGomb");
+
+        // Egy függvény a napszaknak megfelelő üzenettel
+        function udvozlesNapszaktolFuggoen() {
+            const ora = new Date().getHours();
+            let udvozles;
+
+            if (ora >= 5 && ora < 12) {
+                udvozles = "Jó reggelt!";
+            } else if (ora >= 12 && ora < 18) {
+                udvozles = "Jó napot!";
+            } else {
+                udvozles = "Jó estét!";
+            }
+
+            alert(udvozles);
+        }
+
+        koszontesGomb.addEventListener("click", udvozlesNapszaktolFuggoen);
+    </script>
+</body>
+</html>
+
+
+<!--
+    3.Feladat Készíts olyan gombot, melyre kattintva felugrik egy ablak és köszönti a felhasználót! 
+A gomb felirata: „Köszöntés” legyen!
+a.) a köszöntés a napszaknak megfelelően történjen!
+• Megvalósításhoz segítség: 
+https://www.tutorialspoint.com/javascript/date_gethours.htm
+-->
