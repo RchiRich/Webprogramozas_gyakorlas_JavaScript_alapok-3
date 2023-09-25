@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feladat 1</title>
+</head>
+<body>
+    <h1>Találd ki a számot</h1>
+  <p>Gondoltam egy számra 1 és 100 között. Próbáld ki, hogy eltalálod!</p>
+   
+  <input type="text" id="tipInput" placeholder="Írd be a tippedet">
+  <button onclick="ellenoriz()">Ellenőriz</button>
+  <button onclick="ujSzam()">Új Szám</button>
+  
+  <p id="eredmeny"></p>
+
+  <script>
+    var gondoltSzam = Math.floor(Math.random() * 100) + 1;
+    
+    function ellenoriz() {
+      var tip = parseInt(document.getElementById("tipInput").value);
+      var eredmenyParagraf = document.getElementById("eredmeny");
+      
+      if (tip === gondoltSzam) {
+        eredmenyParagraf.textContent = "Gratulálok! Eltaláltad a számot!";
+      } else if (tip < gondoltSzam) {
+        eredmenyParagraf.textContent = "A gondolt szám nagyobb!";
+      } else {
+        eredmenyParagraf.textContent = "A gondolt szám kisebb!";
+      }
+    }
+
+    function ujSzam() {
+      gondoltSzam = Math.floor(Math.random() * 100) + 1;
+      var eredmenyParagraf = document.getElementById("eredmeny");
+      eredmenyParagraf.textContent = "";
+    }
+</script>
+</body>
+</html>
